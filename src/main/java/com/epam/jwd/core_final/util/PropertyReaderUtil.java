@@ -2,11 +2,11 @@ package com.epam.jwd.core_final.util;
 
 import com.epam.jwd.core_final.domain.ApplicationProperties;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.Properties;
 
 public final class PropertyReaderUtil {
-
-    private static final Properties properties = new Properties();
 
     private PropertyReaderUtil() {
     }
@@ -20,7 +20,21 @@ public final class PropertyReaderUtil {
      * values from property file
      */
     public static void loadProperties() {
-        final String propertiesFileName = "resource/application.properties";
-
+        final String propertiesFileName = "./src/main/resources/application.properties";
+        Properties props = new Properties();
+        try (FileInputStream fis = new FileInputStream(propertiesFileName)) {
+            props.load(fis);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        ApplicationProperties.initProps(
+                props.getProperty("inputRootDir"),
+                props.getProperty("outputRootDir"),
+                props.getProperty("crewFileName"),
+                props.getProperty("missionsFileName"),
+                props.getProperty("planetFileName"),
+                props.getProperty("spaceshipsFileName"),
+                Integer.valueOf(props.getProperty("fileRefreshRate")),
+                props.getProperty("dateTimeFormat"));
     }
 }

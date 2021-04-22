@@ -9,7 +9,25 @@ import java.util.Map;
  */
 public class Spaceship extends AbstractBaseEntity {
     //todo
-    Map<Role, Short> crew;
-    Long flightDistance;
-    Boolean isReadyForNextMissions = true;
+    private Map<Role, Short> crew;
+    private Long flightDistance;
+    private Boolean isReadyForNextMissions = true;
+
+    public Spaceship(Map<Role, Short> crew, Long flightDistance, Boolean isReadyForNextMissions) {
+        this.crew = crew;
+        this.flightDistance = flightDistance;
+        this.isReadyForNextMissions = isReadyForNextMissions;
+    }
+
+    public Map<Role, Short> getCrew() {
+        return crew;
+    }
+
+    public Long getFlightDistance() {
+        return flightDistance;
+    }
+
+    public Boolean getReadyForNextMissions() {
+        return isReadyForNextMissions;
+    }
 }
