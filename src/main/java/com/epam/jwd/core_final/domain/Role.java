@@ -31,10 +31,10 @@ public enum Role implements BaseEntity {
      * todo via java.lang.enum methods!
      * @throws UnknownEntityException if such id does not exist
      */
-    public static Role resolveRoleById(Long id) {
+    public static Role resolveRoleById(int id) {
         Role[] roles = Role.values();
         for (Role role : roles){
-            if (role.getId().equals(id)) return role;
+            if (role.getId() == (id)) return role;
         }
         throw new UnknownEntityException("Entity didn't exist");
     }

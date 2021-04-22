@@ -9,6 +9,7 @@ package com.epam.jwd.core_final.domain;
 public abstract class AbstractBaseEntity implements BaseEntity {
 
     Long id;
+
     String name;
 
     @Override
@@ -21,5 +22,9 @@ public abstract class AbstractBaseEntity implements BaseEntity {
     public String getName() {
         // todo
         return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

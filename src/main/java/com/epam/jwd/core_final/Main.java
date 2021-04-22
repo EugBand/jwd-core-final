@@ -1,5 +1,6 @@
 package com.epam.jwd.core_final;
 
+import com.epam.jwd.core_final.context.ApplicationContext;
 import com.epam.jwd.core_final.context.impl.NassaContext;
 import com.epam.jwd.core_final.domain.*;
 import com.epam.jwd.core_final.exception.InvalidStateException;
@@ -23,7 +24,10 @@ public class Main {
         EntityFactory<CrewMember> factory = (EntityFactory<CrewMember>) SingletonFactory.getInstance(CrewMemberFactory.class);
         System.out.println(factory.create(Role.COMMANDER, Rank.FIRST_OFFICER).getRole());
 
-        new NassaContext().retrieveBaseEntityList(Planet.class);
+
+        ApplicationContext nassa = new NassaContext();
+        nassa.retrieveBaseEntityList(Planet.class);
+        nassa.init();
 //        Application.start();
     }
 }

@@ -7,7 +7,7 @@ import com.epam.jwd.core_final.factory.SingletonFactory;
 import java.time.LocalDate;
 
 // do the same for other entities
-public class FlightMissionFactory extends SingletonFactory implements EntityFactory<FlightMission> {
+public class FlightMissionFactory implements EntityFactory<FlightMission> {
 
     @Override
     public FlightMission create(Object... args) {

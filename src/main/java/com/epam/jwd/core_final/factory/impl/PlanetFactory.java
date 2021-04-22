@@ -5,7 +5,7 @@ import com.epam.jwd.core_final.factory.EntityFactory;
 import com.epam.jwd.core_final.factory.SingletonFactory;
 
 // do the same for other entities
-public class PlanetFactory extends SingletonFactory implements EntityFactory<Planet> {
+public class PlanetFactory implements EntityFactory<Planet> {
 
     @Override
     public Planet create(Object... args) {

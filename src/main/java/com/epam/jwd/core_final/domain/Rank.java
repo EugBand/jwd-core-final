@@ -35,7 +35,7 @@ public enum Rank implements BaseEntity {
     public static Rank resolveRankById(int id) {
         Rank[] ranks = Rank.values();
         for (Rank rank : ranks){
-            if (rank.getId().equals(id)) return rank;
+            if (rank.getId() == id) return rank;
         }
         throw new UnknownEntityException("Entity didn't exist");
     }

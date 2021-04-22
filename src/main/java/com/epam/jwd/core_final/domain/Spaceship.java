@@ -13,10 +13,9 @@ public class Spaceship extends AbstractBaseEntity {
     private Long flightDistance;
     private Boolean isReadyForNextMissions = true;
 
-    public Spaceship(Map<Role, Short> crew, Long flightDistance, Boolean isReadyForNextMissions) {
+    public Spaceship(Map<Role, Short> crew, Long flightDistance) {
         this.crew = crew;
         this.flightDistance = flightDistance;
-        this.isReadyForNextMissions = isReadyForNextMissions;
     }
 
     public Map<Role, Short> getCrew() {
@@ -29,5 +28,9 @@ public class Spaceship extends AbstractBaseEntity {
 
     public Boolean getReadyForNextMissions() {
         return isReadyForNextMissions;
+    }
+
+    public void setReadyForNextMissions(Boolean readyForNextMissions) {
+        isReadyForNextMissions = readyForNextMissions;
     }
 }

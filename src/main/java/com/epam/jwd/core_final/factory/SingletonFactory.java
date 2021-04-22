@@ -1,29 +1,32 @@
 package com.epam.jwd.core_final.factory;
 
+import com.epam.jwd.core_final.domain.CrewMember;
+
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.Map;
 
-@SuppressWarnings("unused")
-public abstract class SingletonFactory {
-    private static final Map<Class<? extends SingletonFactory>, SingletonFactory> instances = new HashMap<>();
+@SuppressWarnings("unchecked")
+public final class SingletonFactory {
+    private static final Map<Class, EntityFactory> instances = new HashMap<>();
 
-    protected SingletonFactory() {
+    private SingletonFactory() {
+        SingletonFactory.getInstance(CrewMember.class);
     }
 
-    public static SingletonFactory getInstance(Class<? extends SingletonFactory> type)  {
-        for (Class<? extends SingletonFactory> clazz : instances.keySet()) {
+    public static <T> T getInstance(Class<T> type)  {
+        for (Class clazz : instances.keySet()) {
             if (clazz.getSimpleName().equals(type.getSimpleName())) {
-                return instances.get(clazz);
+                return (T) instances.get(clazz);
             }
         }
-        SingletonFactory newInstance = null;
+        EntityFactory newInstance = null;
         try {
-            newInstance = type.getDeclaredConstructor().newInstance();
+            newInstance = (EntityFactory) type.getDeclaredConstructor().newInstance();
         } catch (InstantiationException | IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
             e.printStackTrace();
         }
         instances.put(type, newInstance);
-        return newInstance;
+        return (T) newInstance;
     }
 }
