@@ -9,4 +9,9 @@ package com.epam.jwd.core_final.domain;
  */
 public class CrewMember extends AbstractBaseEntity {
     // todo
+    Role role;
+    Rank rank;
+    public boolean isReadyForNextMissions(){
+        return true;
+    }
 }
