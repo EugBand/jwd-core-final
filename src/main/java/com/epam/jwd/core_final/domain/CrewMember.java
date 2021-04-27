@@ -1,5 +1,7 @@
 package com.epam.jwd.core_final.domain;
 
+import lombok.Getter;
+
 /**
  * Expected fields:
  * <p>
@@ -7,30 +9,27 @@ package com.epam.jwd.core_final.domain;
  * rank {@link Rank} - member rank
  * isReadyForNextMissions {@link Boolean} - true by default. Set to false, after first failed mission
  */
-public class CrewMember extends AbstractBaseEntity {
-    // todo
-    private final Role role;
-    private final Rank rank;
-   boolean isReadyForNextMissions = true;
 
-    public CrewMember(Role role, Rank rank) {
+@Getter
+public class CrewMember extends AbstractBaseEntity {
+    boolean isReadyForNextMissions = true;
+    // todo
+    private Role role;
+    private Rank rank;
+
+    public CrewMember(long id, String name, Role role, Rank rank) {
+        this.id = id;
+        this.name = name;
         this.role = role;
         this.rank = rank;
-    }
-
-    public Role getRole() {
-        return role;
-    }
-
-    public Rank getRank() {
-        return rank;
-    }
-
-    public boolean isReadyForNextMissions() {
-        return isReadyForNextMissions;
     }
 
     public void setReadyForNextMissions(boolean readyForNextMissions) {
         isReadyForNextMissions = readyForNextMissions;
     }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
 }

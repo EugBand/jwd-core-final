@@ -1,5 +1,9 @@
 package com.epam.jwd.core_final.domain;
 
+import lombok.Getter;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -7,30 +11,28 @@ import java.util.Map;
  * flightDistance {@link Long} - total available flight distance
  * isReadyForNextMissions {@link Boolean} - true by default. Set to false, after first failed mission
  */
+@Getter
 public class Spaceship extends AbstractBaseEntity {
     //todo
-    private Map<Role, Short> crew;
-    private Long flightDistance;
-    private Boolean isReadyForNextMissions = true;
+    private Map<Role, Short> crewStructure;
+    private long flightDistance;
+    private boolean isReadyForNextMissions = true;
 
-    public Spaceship(Map<Role, Short> crew, Long flightDistance) {
-        this.crew = crew;
+    private List<CrewMember> assignedCrew = new ArrayList<>();
+
+    public Spaceship(long id, String name, Map<Role, Short> crewStructure, long flightDistance) {
+        this.id = id;
+        this.name = name;
+        this.crewStructure = crewStructure;
         this.flightDistance = flightDistance;
     }
 
-    public Map<Role, Short> getCrew() {
-        return crew;
-    }
-
-    public Long getFlightDistance() {
-        return flightDistance;
-    }
-
-    public Boolean getReadyForNextMissions() {
+    public Boolean isReadyForNextMissions() {
         return isReadyForNextMissions;
     }
 
     public void setReadyForNextMissions(Boolean readyForNextMissions) {
         isReadyForNextMissions = readyForNextMissions;
     }
+
 }

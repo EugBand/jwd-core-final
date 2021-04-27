@@ -1,28 +1,33 @@
 package com.epam.jwd.core_final.annotation;
 
-import com.epam.jwd.core_final.factory.SingletonFactory;
+import org.reflections.Reflections;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
+@SuppressWarnings("unused")
 public class AnnotationAnalyzer {
-//    Reflections reflections = new Reflections("edu.pqdn.scanner");
-//    Set<Class<?>> set = reflections.getTypesAnnotatedWith(MyAnnotation.class);
-//
-//    List<String> collect = set.stream()
-//            .map(Class::getCanonicalName)
-//            .collect(Collectors.toList());
-//    private static final Map<Class<? extends SingletonFactory>, SingletonFactory> instances = new HashMap<>();
-//    SingletonFactory getInstance(Class type)  {
+    private static final Map<Class<?>, Object> bucket = new HashMap<>();
+    private static Reflections reflections = new Reflections("com.epam.jwd.core_final");
+    private static Set<Class<?>> set = reflections.getTypesAnnotatedWith(ISingleton.class);
+
+
+    public static void init(){
+        set.forEach(item-> System.out.println(item.getSimpleName()));
+    }
+
+
+
+//    ISingleton getInstance(Class type) {
 //        for (Class clazz : instances.keySet()) {
 //            if (clazz.getSimpleName().equals(type.getSimpleName())) {
 //                return instances.get(clazz);
 //            }
 //        }
-//        SingletonFactory newInstance = null;
+//        ISingleton newInstance = null;
 //        try {
-//            newInstance = (SingletonFactory) type.getDeclaredConstructor().newInstance();
+//            newInstance = (ISingleton) type.getDeclaredConstructor().newInstance();
 //        } catch (InstantiationException | IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
 //            e.printStackTrace();
 //        }

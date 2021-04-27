@@ -1,17 +1,22 @@
 package com.epam.jwd.core_final.factory.impl;
 
-import com.epam.jwd.core_final.domain.*;
+import com.epam.jwd.core_final.domain.FlightMission;
+import com.epam.jwd.core_final.domain.MissionResult;
+import com.epam.jwd.core_final.domain.Planet;
+import com.epam.jwd.core_final.domain.Spaceship;
 import com.epam.jwd.core_final.factory.EntityFactory;
-import com.epam.jwd.core_final.factory.SingletonFactory;
 
 import java.time.LocalDate;
 
 // do the same for other entities
-public class FlightMissionFactory implements EntityFactory<FlightMission> {
+public final class FlightMissionFactory implements EntityFactory<FlightMission> {
+
+    FlightMissionFactory() {
+    }
 
     @Override
     public FlightMission create(Object... args) {
-        return new FlightMission((String) args[0], (LocalDate) args[1], (LocalDate) args[2], (Long) args[3],
-                (MissionResult) args[4], (Planet) args[5], (Planet) args[6]);
+        return new FlightMission((long) args[0], (String) args[1], (Spaceship) args[2], (LocalDate) args[3],
+                (LocalDate) args[4], (Long) args[5], (MissionResult) args[6], (Planet) args[7], (Planet) args[8]);
     }
 }

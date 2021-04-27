@@ -1,0 +1,6 @@
+[ERROR] 2021-04-25 15:25:33.551 [main]  - Test nmessage
+java.lang.Exception: null
+	at com.epam.jwd.core_final.Main.main(Main.java:20) [classes/:?]
+[WARN ] 2021-04-25 15:25:33.585 [main]  - [Test nmessage]
+[INFO ] 2021-04-25 15:25:33.585 [main]  - [Test nmessage]
+[DEBUG] 2021-04-25 15:25:33.585 [main]  - [Test nmessage]

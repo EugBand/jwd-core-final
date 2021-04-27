@@ -1,5 +1,7 @@
 package com.epam.jwd.core_final.domain;
 
+import lombok.Getter;
+
 import java.time.LocalDate;
 import java.util.List;
 
@@ -16,22 +18,28 @@ import java.util.List;
  * from {@link Planet}
  * to {@link Planet}
  */
+
+@Getter
+@SuppressWarnings("unused")
 public class FlightMission extends AbstractBaseEntity {
     // todo
-    private final String missionsName;
     private final LocalDate startDate;
-    private final LocalDate endDate;
+
+
+    private LocalDate endDate;
     private final Long distance;
-    private Spaceship assignedSpaceShift;
-    private List<CrewMember> assignedCrew;
+    private Spaceship assignedSpaceShip;
+    private List<CrewMember> assignedCrew; //Probably this field d'better move to Spaceship class
     private MissionResult missionResult;
     private final Planet from;
     private final Planet to;
 
-    public FlightMission(String missionsName, LocalDate startDate, LocalDate endDate, Long distance, MissionResult missionResult, Planet from, Planet to) {
-        this.missionsName = missionsName;
+    public FlightMission(long id, String name, Spaceship ship, LocalDate startDate,
+                         LocalDate endDate, Long distance, MissionResult missionResult, Planet from, Planet to) {
+        this.name = name;
         this.startDate = startDate;
         this.endDate = endDate;
+        this.assignedSpaceShip = ship;
         this.distance = distance;
         this.missionResult = missionResult;
         this.from = from;
@@ -39,50 +47,18 @@ public class FlightMission extends AbstractBaseEntity {
     }
 
     public void setAssignedSpaceShift(Spaceship assignedSpaceShift) {
-        this.assignedSpaceShift = assignedSpaceShift;
+        this.assignedSpaceShip = assignedSpaceShift;
     }
 
     public void setAssignedCrew(List<CrewMember> assignedCrew) {
         this.assignedCrew = assignedCrew;
     }
 
+    public void setEndDate(LocalDate endDate) {
+        this.endDate = endDate;
+    }
+
     public void setMissionResult(MissionResult missionResult) {
         this.missionResult = missionResult;
-    }
-
-    public String getMissionsName() {
-        return missionsName;
-    }
-
-    public LocalDate getStartDate() {
-        return startDate;
-    }
-
-    public LocalDate getEndDate() {
-        return endDate;
-    }
-
-    public Long getDistance() {
-        return distance;
-    }
-
-    public Spaceship getAssignedSpaceShift() {
-        return assignedSpaceShift;
-    }
-
-    public List<CrewMember> getAssignedCrew() {
-        return assignedCrew;
-    }
-
-    public MissionResult getMissionResult() {
-        return missionResult;
-    }
-
-    public Planet getFrom() {
-        return from;
-    }
-
-    public Planet getTo() {
-        return to;
     }
 }

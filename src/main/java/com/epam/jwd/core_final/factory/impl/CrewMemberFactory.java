@@ -1,14 +1,20 @@
 package com.epam.jwd.core_final.factory.impl;
 
-import com.epam.jwd.core_final.domain.*;
+import com.epam.jwd.core_final.domain.CrewMember;
+import com.epam.jwd.core_final.domain.Rank;
+import com.epam.jwd.core_final.domain.Role;
 import com.epam.jwd.core_final.factory.EntityFactory;
-import com.epam.jwd.core_final.factory.SingletonFactory;
+
 
 // do the same for other entities
-public class CrewMemberFactory implements EntityFactory<CrewMember> {
+public final class CrewMemberFactory implements EntityFactory<CrewMember> {
+
+    CrewMemberFactory() {
+    }
 
     @Override
     public CrewMember create(Object... args) {
-        return new CrewMember((Role) args[0], (Rank) args[1]);
-            }
+        return new CrewMember((long) args[0], (String) args[1],
+                (Role) args[2], (Rank) args[3]);
+    }
 }

@@ -23,8 +23,4 @@ public abstract class AbstractBaseEntity implements BaseEntity {
         // todo
         return this.name;
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }

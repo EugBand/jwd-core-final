@@ -1,38 +1,44 @@
 package com.epam.jwd.core_final.domain;
 
+import lombok.Getter;
+
 /**
  * Expected fields:
  * <p>
  * location could be a simple class Point with 2 coordinates
  */
+@Getter
 public class Planet extends AbstractBaseEntity {
 
     private Point point;
+    private boolean isVisited;
 
-    public Planet(Long x, Long y) {
+    private boolean isAssigned;
+
+    public Planet(long id, String name, long x, long y) {
+        this.id = id;
+        this.name = name;
         this.point = new Point(x, y);
     }
 
-    private Point getPoint() {
-        return point;
-    }
 
-    class Point {
+    @Getter
+    public class Point {
         private long x;
         private long y;
 
 
-        public Point(long x, long y) {
+        Point(long x, long y) {
             this.x = x;
             this.y = y;
         }
+     }
 
-        public long getX() {
-            return x;
-        }
+    public void setVisited(boolean visited) {
+        isVisited = visited;
+    }
 
-        public long getY() {
-            return y;
-        }
+    public void setAssigned(boolean assigned) {
+        isAssigned = assigned;
     }
 }

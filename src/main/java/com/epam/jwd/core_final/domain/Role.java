@@ -1,6 +1,6 @@
 package com.epam.jwd.core_final.domain;
 
-import com.epam.jwd.core_final.exception.UnknownEntityException;
+import com.epam.jwd.core_final.exception.entityexception.UnknownEntityException;
 
 public enum Role implements BaseEntity {
     MISSION_SPECIALIST(1L),
@@ -31,11 +31,11 @@ public enum Role implements BaseEntity {
      * todo via java.lang.enum methods!
      * @throws UnknownEntityException if such id does not exist
      */
-    public static Role resolveRoleById(int id) {
+    public static Role resolveRoleById(int id) throws UnknownEntityException {
         Role[] roles = Role.values();
         for (Role role : roles){
             if (role.getId() == (id)) return role;
         }
-        throw new UnknownEntityException("Entity didn't exist");
+            throw new UnknownEntityException("Entity didn't exist");
     }
 }

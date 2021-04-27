@@ -1,0 +1,35 @@
+[ERROR] 2021-04-25 15:20:36.004 [main]  - Test nmessage
+java.lang.Exception: null
+	at com.epam.jwd.core_final.Main.main(Main.java:20) [classes/:?]
+[WARN ] 2021-04-25 15:20:36.047 [main]  - [Test nmessage]
+[INFO ] 2021-04-25 15:20:36.048 [main]  - [Test nmessage]
+[DEBUG] 2021-04-25 15:20:36.048 [main]  - [Test nmessage]
+[ERROR] 2021-04-25 15:23:05.480 [main]  - Test nmessage
+java.lang.Exception: null
+	at com.epam.jwd.core_final.Main.main(Main.java:20) [classes/:?]
+[WARN ] 2021-04-25 15:23:05.516 [main]  - [Test nmessage]
+[INFO ] 2021-04-25 15:23:05.517 [main]  - [Test nmessage]
+[DEBUG] 2021-04-25 15:23:05.517 [main]  - [Test nmessage]
+[ERROR] 2021-04-25 15:25:55.973 [main]  - Test nmessage
+java.lang.Exception: null
+	at com.epam.jwd.core_final.Main.main(Main.java:20) [classes/:?]
+[WARN ] 2021-04-25 15:25:56.047 [main]  - [Test nmessage]
+[INFO ] 2021-04-25 15:25:56.047 [main]  - [Test nmessage]
+[DEBUG] 2021-04-25 15:25:56.048 [main]  - [Test nmessage]
+[ERROR] 2021-04-25 15:26:07.814 [main]  - Test nmessage
+java.lang.Exception: null
+	at com.epam.jwd.core_final.Main.main(Main.java:20) [classes/:?]
+[WARN ] 2021-04-25 15:26:07.858 [main]  - [Test nmessage]
+[INFO ] 2021-04-25 15:26:07.859 [main]  - [Test nmessage]
+[DEBUG] 2021-04-25 15:26:07.859 [main]  - [Test nmessage]
+[DEBUG] 2021-04-25 15:43:45.833 [main] Reflections - going to scan these urls:
+file:/D:/java/final/out/production/classes/
+[INFO ] 2021-04-25 15:43:45.996 [main] Reflections - Reflections took 155 ms to scan 1 urls, producing 22 keys and 41 values 
+[DEBUG] 2021-04-25 15:43:46.042 [main] Reflections - expanded subtype java.lang.Exception -> java.lang.RuntimeException
+[DEBUG] 2021-04-25 15:43:46.043 [main] Reflections - expanded subtype java.lang.Throwable -> java.lang.Exception
+[DEBUG] 2021-04-25 15:43:46.044 [main] Reflections - expanded subtype java.io.Serializable -> java.lang.Throwable
+[DEBUG] 2021-04-25 15:43:46.046 [main] Reflections - expanded subtype java.lang.Comparable -> java.lang.Enum
+[DEBUG] 2021-04-25 15:43:46.047 [main] Reflections - expanded subtype java.io.Serializable -> java.lang.Enum
+[ERROR] 2021-04-27 23:54:20.089 [main]  - !!!!!!!!!!!!!!!!!!
+java.lang.Exception: null
+	at com.epam.jwd.core_final.Main.main(Main.java:14) [classes/:?]

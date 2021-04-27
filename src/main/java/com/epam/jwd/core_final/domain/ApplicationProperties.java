@@ -14,6 +14,8 @@ package com.epam.jwd.core_final.domain;
  * fileRefreshRate {@link Integer}
  * dateTimeFormat {@link String} - date/time format for {@link java.time.format.DateTimeFormatter} pattern
  */
+
+
 public final class ApplicationProperties {
     //todo
     private static boolean isInit = false;
