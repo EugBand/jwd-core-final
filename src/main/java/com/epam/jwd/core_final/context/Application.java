@@ -1,5 +1,6 @@
 package com.epam.jwd.core_final.context;
 
+import com.epam.jwd.core_final.context.impl.ApplicationMenuImpl;
 import com.epam.jwd.core_final.context.impl.NassaContext;
 import com.epam.jwd.core_final.dispatcher.MissionDispatcher;
 import com.epam.jwd.core_final.dispatcher.MissionPlanner;
@@ -8,7 +9,6 @@ import com.epam.jwd.core_final.domain.FlightMission;
 import com.epam.jwd.core_final.exception.InvalidStateException;
 import com.epam.jwd.core_final.util.AppLogger;
 import com.epam.jwd.core_final.util.IAppLogger;
-import com.epam.jwd.core_final.util.PropertyReaderUtil;
 
 import java.util.List;
 import java.util.concurrent.Executors;
@@ -18,6 +18,7 @@ import java.util.function.Supplier;
 
 import static com.epam.jwd.core_final.util.enums.LogTypes.ERROR;
 
+
 public interface Application {
     IAppLogger logger = AppLogger.getInstance();
 
@@ -26,6 +27,7 @@ public interface Application {
         final Supplier<ApplicationContext> applicationContextSupplier = NassaContext::getInstance;
         NassaContext nassa = NassaContext.getInstance();
         nassa.init();
+        ApplicationMenuImpl.getInstance().getApplicationContext();
         ScheduledExecutorService service = refreshAfterInterval(nassa);
         List<FlightMission> missions = MissionPlanner.getInstance()
                 .planeMissions(nassa.isSmartCrewCreating(), nassa.isUsingDijkstra());
@@ -35,15 +37,14 @@ public interface Application {
     }
 
     private static ScheduledExecutorService refreshAfterInterval(NassaContext nassa) {
-        int interval = ApplicationProperties.getFileRefreshRate();
         ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor();
-        service.schedule(() -> {
+        service.scheduleWithFixedDelay(() -> {
             try {
                 nassa.init();
             } catch (InvalidStateException e) {
                 logger.log(ERROR, "Error initialization", e);
             }
-        }, interval, TimeUnit.MILLISECONDS);
+        }, 0, ApplicationProperties.getFileRefreshRate(), TimeUnit.MILLISECONDS);
         return service;
     }
 }

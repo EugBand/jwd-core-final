@@ -94,8 +94,6 @@ public final class NassaContext implements ApplicationContext {
         CrewParser.getInstance().parseEntity(crewSource, crewMemberList);
         PlanetParser.getInstance().parseEntity(planetSource, planetList);
         ShipParser.getInstance().parseEntity(spaceshipSource, spaceshipsList);
-
-        ApplicationMenuImpl.getInstance().getApplicationContext();
     }
 
     public int getFailureProbability() {

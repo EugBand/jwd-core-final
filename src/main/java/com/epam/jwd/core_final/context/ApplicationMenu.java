@@ -9,9 +9,9 @@ import java.util.Scanner;
 // todo replace Object with your own types
 @FunctionalInterface
 public interface ApplicationMenu {
-    final AppConsolePrinter printer = (AppConsolePrinter) AppConsolePrinter.getInstance();
+    AppConsolePrinter printer = (AppConsolePrinter) AppConsolePrinter.getInstance();
 
-    ApplicationContext getApplicationContext();
+    void getApplicationContext();
 
     default void handleOutput(String message, IAppPrinter... printers) {
         for (IAppPrinter printer : printers){

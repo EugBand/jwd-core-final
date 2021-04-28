@@ -46,16 +46,16 @@ public final class ShipParser implements IEntityParser<Spaceship> {
                 if (line.charAt(0) != '#') {
                     Map<Role, Short> shipCrewList = new HashMap<>();
                     String[] rawShipArray = line.split(";");
-                    String rawCrew = rawShipArray[2].substring(1, rawShipArray[2].length() -1);
+                    String rawCrew = rawShipArray[2].substring(1, rawShipArray[2].length() - 1);
                     String[] rawCrewArray = rawCrew.split(",");
-                    for(String crew : rawCrewArray){
-                       Role role = Role.resolveRoleById(Integer.parseInt(crew.split(":")[0]));
-                       Short amount = Short.parseShort(crew.split(":")[1]);
-                       shipCrewList.put(role, floor(amount/3) == 0 ? 1 : (short) (ceil(amount/3)));
+                    for (String crew : rawCrewArray) {
+                        Role role = Role.resolveRoleById(Integer.parseInt(crew.split(":")[0]));
+                        short amount = Short.parseShort(crew.split(":")[1]);
+                        shipCrewList.put(role, floor(amount / 3.0) == 0 ? 1 : (short) (ceil(amount / 3.0)));
                     }
                     Spaceship ship = spaceshipFactory.create(id++, rawShipArray[0],
                             shipCrewList, Long.parseLong(rawShipArray[1]));
-                   shipService.createShip(ship);
+                    shipService.createShip(ship);
 
                 }
                 line = reader.readLine();

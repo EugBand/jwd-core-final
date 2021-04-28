@@ -1,12 +1,13 @@
 package com.epam.jwd.core_final.context.impl;
 
-import com.epam.jwd.core_final.context.ApplicationContext;
 import com.epam.jwd.core_final.context.ApplicationMenu;
 import com.epam.jwd.core_final.domain.CrewMember;
 import com.epam.jwd.core_final.domain.Planet;
 import com.epam.jwd.core_final.domain.Spaceship;
 import com.epam.jwd.core_final.printer.impl.AppConsolePrinter;
 import com.epam.jwd.core_final.printer.impl.AppJSONFilePrinter;
+
+import java.util.Objects;
 
 public final class ApplicationMenuImpl implements ApplicationMenu {
     private static ApplicationMenu instance;
@@ -22,11 +23,10 @@ public final class ApplicationMenuImpl implements ApplicationMenu {
     }
 
     @Override
-    public ApplicationContext getApplicationContext() {
+    public void getApplicationContext() {
         nassa = NassaContext.getInstance();
         this.initUserMissionData();
         this.printInitData();
-        return nassa;
     }
 
     private void initUserMissionData() {
@@ -44,11 +44,11 @@ public final class ApplicationMenuImpl implements ApplicationMenu {
 
     private void printInitData(){
         String crewMessage = "Crews ready! Quantity = " +
-                nassa.retrieveBaseEntityList(CrewMember.class).size() + " person";
+                Objects.requireNonNull(nassa.retrieveBaseEntityList(CrewMember.class)).size() + " person";
         String planetMessage = "Planets map ready! Quantity = " +
-                nassa.retrieveBaseEntityList(Planet.class).size() + " planet";
+                Objects.requireNonNull(nassa.retrieveBaseEntityList(Planet.class)).size() + " planet";
         String shipMessage = "Spaceships also ready! Quantity = " +
-                nassa.retrieveBaseEntityList(Spaceship.class).size() + " ships";
+                Objects.requireNonNull(nassa.retrieveBaseEntityList(Spaceship.class)).size() + " ships";
         this.handleOutput(crewMessage, printer.printWaiting(200, 7, '.')
                 .print(AppJSONFilePrinter.getInstance(), crewMessage));
         this.handleOutput(planetMessage, printer.printWaiting(200, 7, '.')

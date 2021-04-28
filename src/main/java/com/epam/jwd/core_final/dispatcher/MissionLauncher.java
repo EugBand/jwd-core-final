@@ -31,22 +31,21 @@ public final class MissionLauncher extends MissionMaintainer {
             } catch (InterruptedException e) {
                 logger.log(ERROR, "Can't interrupt thread", e);
             }
-            if ((Math.random() * 100) > (ceil(nassa.getFailureProbability() / 40) + 97.5)) {
+            if ((Math.random() * 100) > (ceil(nassa.getFailureProbability() / 40.0) + 97.5)) {
                 return failure(mission, i);
             }
         }
         return complete(mission);
     }
 
-
-    private String failure(FlightMission mission, long days) {
+    String failure(FlightMission mission, long days) {
         mission.setMissionResult(FAILED);
         mission.setEndDate(mission.getStartDate().plusDays(days));
         String endData = nassa.getDateTimeFormat().format( mission.getStartDate().plusDays(days).atTime(LocalTime.now()));
         return String.format("%s R.I.P.! Mission %s failed after %d days", endData, mission.getName(), days);
     }
 
-    private String complete(FlightMission mission) {
+    String complete(FlightMission mission) {
         mission.setMissionResult(COMPLETED);
         planetService.setVisited(mission.getTo(), true);
         shipService.assignSpaceshipOnMission(mission.getAssignedSpaceShip(), false);
