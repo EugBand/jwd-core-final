@@ -1,11 +1,14 @@
 package com.epam.jwd.core_final.dispatcher;
 
+import com.epam.jwd.core_final.criteria.SpaceshipCriteria;
 import com.epam.jwd.core_final.domain.ApplicationProperties;
 import com.epam.jwd.core_final.domain.FlightMission;
 import com.epam.jwd.core_final.printer.impl.AppJSONFilePrinter;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
@@ -53,6 +56,7 @@ public final class MissionDispatcher extends MissionMaintainer {
     }
 
     public void dispatchMissionWithExecutor(List<FlightMission> missions) {
+        ScheduledExecutorService service = Executors.newScheduledThreadPool(10);
         List<FlightMission> readyMission = missions.stream()
                 .filter(item -> item.getMissionResult().equals(PLANNED))
                 .collect(Collectors.toList());
@@ -78,16 +82,17 @@ public final class MissionDispatcher extends MissionMaintainer {
             if (readyMission.stream().noneMatch(item -> item.getMissionResult().equals(IN_PROGRESS))) {
                 printResult(missions);
                 missions.removeAll(missions);
-                this.service.shutdown();
+                service.shutdown();
             }
         },0, interval, TimeUnit.MILLISECONDS);
     }
 
     private void printResult(List<FlightMission> missions) {
         int discoveredPlanet = planets.size() - fetchExistNotVisitedPlanets().size() - 1;
-        int lostShips = missions.size() - discoveredPlanet;
+        int lostShips = shipService.findAllSpaceships().size() -
+                shipService.findAllSpaceshipsByCriteria(SpaceshipCriteria.isNotLost(false)).size();
         String result = String.format
-                ("We've discovered %d planets! But we've lost %d ships! Type \"true\" to continue"
+                ("We've discovered %d planets! But we've lost %d ships!   Type \"true\" to continue"
                         , discoveredPlanet, lostShips);
         printer.printWaiting(200, 7, '.')
                 .print(AppJSONFilePrinter.getInstance(), result).print(result);

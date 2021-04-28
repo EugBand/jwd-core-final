@@ -5,7 +5,7 @@
 }{
   "message2" : "Spaceships also ready! Quantity = 30 ships"
 }{
-  "message3" : "9 has been complected!"
+  "message3" : "9 ship(s) has been complected!"
 }{
   "message4" : "Mission from-\"Mars\"-to-\"Jupiter\"-ship-\"HMS Nightfal\"-distance-5 created"
 }{
@@ -25,27 +25,27 @@
 }{
   "message12" : "Mission from-\"Mars\"-to-\"Venus\"-ship-\"CS Revolution\"-distance-79 created"
 }{
-  "message13" : "3021-05-03 23:28:12 SUCCESS! Mission from-\"Mars\"-to-\"Jupiter\"-ship-\"HMS Nightfal\"-distance-5 completed after 5 days"
+  "message13" : "3021-05-03 23:50:44 SUCCESS! Mission from-\"Mars\"-to-\"Jupiter\"-ship-\"HMS Nightfal\"-distance-5 completed after 5 days"
 }{
-  "message14" : "3021-05-07 23:28:12 R.I.P.! Mission from-\"Mars\"-to-\"Venus\"-ship-\"CS Revolution\"-distance-79 failed after 9 days"
+  "message14" : "3021-05-06 23:50:44 R.I.P.! Mission from-\"Mars\"-to-\"Eris\"-ship-\"HMS Twilight\"-distance-77 failed after 8 days"
 }{
-  "message15" : "3021-05-14 23:28:13 SUCCESS! Mission from-\"Mars\"-to-\"Ceres\"-ship-\"Providence\"-distance-16 completed after 16 days"
+  "message15" : "3021-05-09 23:50:45 R.I.P.! Mission from-\"Mars\"-to-\"Kamino\"-ship-\"ISS Diplomat\"-distance-79 failed after 11 days"
 }{
-  "message16" : "3021-06-08 23:28:14 R.I.P.! Mission from-\"Mars\"-to-\"Star Forge\"-ship-\"Spider\"-distance-66 failed after 41 days"
+  "message16" : "3021-05-14 23:50:45 SUCCESS! Mission from-\"Mars\"-to-\"Ceres\"-ship-\"Providence\"-distance-16 completed after 16 days"
 }{
-  "message17" : "3021-07-07 23:28:16 SUCCESS! Mission from-\"Mars\"-to-\"Mercury\"-ship-\"Invincible\"-distance-70 completed after 70 days"
+  "message17" : "3021-06-08 23:50:46 R.I.P.! Mission from-\"Mars\"-to-\"Korriban\"-ship-\"STS Angel\"-distance-76 failed after 41 days"
 }{
-  "message18" : "3021-07-09 23:28:16 SUCCESS! Mission from-\"Mars\"-to-\"Taris\"-ship-\"Wolf2\"-distance-72 completed after 72 days"
+  "message18" : "3021-06-24 23:50:47 R.I.P.! Mission from-\"Mars\"-to-\"Venus\"-ship-\"CS Revolution\"-distance-79 failed after 57 days"
 }{
-  "message19" : "3021-07-13 23:28:16 SUCCESS! Mission from-\"Mars\"-to-\"Korriban\"-ship-\"STS Angel\"-distance-76 completed after 76 days"
+  "message19" : "3021-06-29 23:50:48 R.I.P.! Mission from-\"Mars\"-to-\"Mercury\"-ship-\"Invincible\"-distance-70 failed after 62 days"
 }{
-  "message20" : "3021-07-13 23:28:16 R.I.P.! Mission from-\"Mars\"-to-\"Eris\"-ship-\"HMS Twilight\"-distance-77 failed after 76 days"
+  "message20" : "3021-07-03 23:50:48 SUCCESS! Mission from-\"Mars\"-to-\"Star Forge\"-ship-\"Spider\"-distance-66 completed after 66 days"
 }{
-  "message21" : "3021-07-16 23:28:16 SUCCESS! Mission from-\"Mars\"-to-\"Kamino\"-ship-\"ISS Diplomat\"-distance-79 completed after 79 days"
+  "message21" : "3021-07-09 23:50:48 SUCCESS! Mission from-\"Mars\"-to-\"Taris\"-ship-\"Wolf2\"-distance-72 completed after 72 days"
 }{
-  "message22" : "We've discovered 6 planets! But we've lost 3 ships! Type \"true\" to continue"
+  "message22" : "We've discovered 4 planets! But we've lost 5 ships!   Type \"true\" to continue"
 }{
-  "message23" : "6 has been complected!"
+  "message23" : "4 ship(s) has been complected!"
 }{
   "message24" : "Mission from-\"Mars\"-to-\"Leviathan\"-ship-\"HMS Nightfal\"-distance-86 created"
 }{
@@ -53,9 +53,23 @@
 }{
   "message26" : "Mission from-\"Mars\"-to-\"Saturn\"-ship-\"Spider\"-distance-105 created"
 }{
-  "message27" : "Mission from-\"Mars\"-to-\"Pluto\"-ship-\"Invincible\"-distance-105 created"
+  "message27" : "Mission from-\"Mars\"-to-\"Pluto\"-ship-\"Wolf2\"-distance-105 created"
 }{
-  "message28" : "Mission from-\"Mars\"-to-\"Mustafar\"-ship-\"Wolf2\"-distance-114 created"
+  "message28" : "3021-05-03 23:51:03 R.I.P.! Mission from-\"Mars\"-to-\"Leviathan\"-ship-\"HMS Nightfal\"-distance-86 failed after 5 days"
 }{
-  "message29" : "Mission from-\"Mars\"-to-\"Tatooine\"-ship-\"HMS Twilight\"-distance-115 created"
+  "message29" : "3021-07-01 23:51:06 R.I.P.! Mission from-\"Mars\"-to-\"Corusant\"-ship-\"Providence\"-distance-101 failed after 64 days"
+}{
+  "message30" : "3021-08-07 23:51:08 R.I.P.! Mission from-\"Mars\"-to-\"Saturn\"-ship-\"Spider\"-distance-105 failed after 101 days"
+}{
+  "message31" : "3021-08-11 23:51:09 SUCCESS! Mission from-\"Mars\"-to-\"Pluto\"-ship-\"Wolf2\"-distance-105 completed after 105 days"
+}{
+  "message32" : "We've discovered 5 planets! But we've lost 8 ships!   Type \"true\" to continue"
+}{
+  "message33" : "1 ship(s) has been complected!"
+}{
+  "message34" : "Mission from-\"Mars\"-to-\"Mustafar\"-ship-\"HMS Nightfal\"-distance-114 created"
+}{
+  "message35" : "3021-06-29 23:51:20 R.I.P.! Mission from-\"Mars\"-to-\"Mustafar\"-ship-\"HMS Nightfal\"-distance-114 failed after 62 days"
+}{
+  "message36" : "We've discovered 5 planets! But we've lost 8 ships!   Type \"true\" to continue"
 }

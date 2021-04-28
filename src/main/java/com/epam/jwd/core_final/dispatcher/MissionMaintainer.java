@@ -17,8 +17,6 @@ import com.epam.jwd.core_final.util.IAppLogger;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
 import java.util.stream.Collectors;
 
 abstract class MissionMaintainer {
@@ -30,7 +28,6 @@ abstract class MissionMaintainer {
     PlanetService planetService = PlanetServiceImpl.getInstance();
     ShipService shipService = ShipServiceImpl.getInstance();
     CrewService crewService = CrewServiceImpl.getInstance();
-    ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor();
 
     {
         planets = Optional.ofNullable((List<Planet>) nassa.retrieveBaseEntityList(Planet.class))

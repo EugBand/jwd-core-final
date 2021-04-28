@@ -29,7 +29,7 @@ public final class MissionPlanner extends MissionMaintainer {
         List<FlightMission> missions = new ArrayList<>();
         List<Spaceship> ships = MissionCompleter.getInstance().shipComplete(isSmartCrew);
         if (ships.size() == 0) throw new CrewNotAssignException("Error assign crews to ships");
-        String result = ships.size() + " has been complected!";
+        String result = ships.size() + " ship(s) has been complected!";
         printer.printWaiting(200, 7, '.').print(AppJSONFilePrinter.getInstance(), result
         ).print(result);
         for (Spaceship ship : ships) {
