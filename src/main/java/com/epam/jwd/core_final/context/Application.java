@@ -5,12 +5,10 @@ import com.epam.jwd.core_final.context.impl.NassaContext;
 import com.epam.jwd.core_final.dispatcher.MissionDispatcher;
 import com.epam.jwd.core_final.dispatcher.MissionPlanner;
 import com.epam.jwd.core_final.domain.ApplicationProperties;
-import com.epam.jwd.core_final.domain.FlightMission;
 import com.epam.jwd.core_final.exception.InvalidStateException;
 import com.epam.jwd.core_final.util.AppLogger;
 import com.epam.jwd.core_final.util.IAppLogger;
 
-import java.util.List;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -29,9 +27,10 @@ public interface Application {
         nassa.init();
         ApplicationMenuImpl.getInstance().getApplicationContext();
         ScheduledExecutorService service = refreshAfterInterval(nassa);
-        List<FlightMission> missions = MissionPlanner.getInstance()
-                .planeMissions(nassa.isSmartCrewCreating(), nassa.isUsingDijkstra());
-        MissionDispatcher.getInstance().dispatchMissionWithExecutor(missions);
+        do {
+            MissionDispatcher.getInstance().dispatchMissionWithExecutor(MissionPlanner.getInstance()
+                    .planeMissions(nassa.isSmartCrewCreating(), nassa.isUsingDijkstra()));
+        } while ((boolean)ApplicationMenuImpl.getInstance().handleInput(Boolean.class));
         service.shutdown();
         return applicationContextSupplier::get;
     }

@@ -17,6 +17,7 @@ public class Spaceship extends AbstractBaseEntity {
     private Map<Role, Short> crewStructure;
     private long flightDistance;
     private boolean isReadyForNextMissions = true;
+    private boolean isLost = false;
 
     private List<CrewMember> assignedCrew = new ArrayList<>();
 
@@ -35,4 +36,11 @@ public class Spaceship extends AbstractBaseEntity {
         isReadyForNextMissions = readyForNextMissions;
     }
 
+    public boolean isLost() {
+        return isLost;
+    }
+
+    public void setLost(boolean lost) {
+        isLost = lost;
+    }
 }

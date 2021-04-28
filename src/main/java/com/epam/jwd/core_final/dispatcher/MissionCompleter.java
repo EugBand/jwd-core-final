@@ -1,6 +1,7 @@
 package com.epam.jwd.core_final.dispatcher;
 
 import com.epam.jwd.core_final.criteria.CrewMemberCriteria;
+import com.epam.jwd.core_final.criteria.SpaceshipCriteria;
 import com.epam.jwd.core_final.domain.CrewMember;
 import com.epam.jwd.core_final.domain.Role;
 import com.epam.jwd.core_final.domain.Spaceship;
@@ -25,7 +26,7 @@ public final class MissionCompleter extends MissionMaintainer {
 
     List<Spaceship> shipComplete(boolean isSmartComplect) {
         List<Spaceship> complectedShip = new ArrayList<>();
-        List<Spaceship> startShips = ships;
+        List<Spaceship> startShips = shipService.findAllSpaceshipsByCriteria(SpaceshipCriteria.isNotLost(true));
         Role rareRole = Role.FLIGHT_ENGINEER;
         if (isSmartComplect) startShips = sort(ships, rareRole);
         for (Spaceship ship : startShips) {
@@ -44,7 +45,8 @@ public final class MissionCompleter extends MissionMaintainer {
         for (Map.Entry<Role, Short> role : crewStructure.entrySet()) {
             List<CrewMember> aviableMembers = new ArrayList<>(crewService
                     .findAllCrewMembersByCriteria(CrewMemberCriteria
-                            .fetchReady(true).and(CrewMemberCriteria.fetchByRole(role.getKey()))));
+                            .fetchReady(true).and(CrewMemberCriteria.fetchByRole(role.getKey()))
+                            .and(CrewMemberCriteria.fetchNotMissing(true))));
             if (role.getValue() >= aviableMembers.size()) {
                 return false;
             }
@@ -52,7 +54,8 @@ public final class MissionCompleter extends MissionMaintainer {
         for (Map.Entry<Role, Short> role : crewStructure.entrySet()) {
             List<CrewMember> avialableMembers = new ArrayList<>(crewService
                     .findAllCrewMembersByCriteria(CrewMemberCriteria
-                            .fetchReady(true).and(CrewMemberCriteria.fetchByRole(role.getKey()))));
+                            .fetchReady(true).and(CrewMemberCriteria.fetchByRole(role.getKey()))
+                            .and(CrewMemberCriteria.fetchNotMissing(true))));
             for (int i = 0; i < role.getValue(); i++) {
                 shipService.assignMembersToShipCrew(ship, avialableMembers.get(i));
             }

@@ -65,13 +65,11 @@ public final class MissionDispatcher extends MissionMaintainer {
                 if (mission.getMissionResult().equals(IN_PROGRESS)) {
                     if ((Math.random() * 100) > (ceil(nassa.getFailureProbability() / 40.0) + 97.5)) {
                         String result = MissionLauncher.getInstance().failure(mission, counter.get());
-//                        mission.setMissionResult(FAILED);
                         printer.print(AppJSONFilePrinter.getInstance(), result).print(result);
                         continue;
                     }
                     if (mission.getDistance() <= counter.get()
                             && mission.getMissionResult().equals(IN_PROGRESS)) {
-//                        mission.setMissionResult(COMPLETED);
                         String result = MissionLauncher.getInstance().complete(mission);
                         printer.print(AppJSONFilePrinter.getInstance(), result).print(result);
                     }
@@ -79,18 +77,18 @@ public final class MissionDispatcher extends MissionMaintainer {
             }
             if (readyMission.stream().noneMatch(item -> item.getMissionResult().equals(IN_PROGRESS))) {
                 printResult(missions);
+                missions.removeAll(missions);
                 this.service.shutdown();
             }
         },0, interval, TimeUnit.MILLISECONDS);
-
-
     }
 
     private void printResult(List<FlightMission> missions) {
         int discoveredPlanet = planets.size() - fetchExistNotVisitedPlanets().size() - 1;
         int lostShips = missions.size() - discoveredPlanet;
         String result = String.format
-                ("We've discovered %d planets! But we've lost %d ships!", discoveredPlanet, lostShips);
+                ("We've discovered %d planets! But we've lost %d ships! Type \"true\" to continue"
+                        , discoveredPlanet, lostShips);
         printer.printWaiting(200, 7, '.')
                 .print(AppJSONFilePrinter.getInstance(), result).print(result);
     }

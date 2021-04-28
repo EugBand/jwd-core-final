@@ -19,7 +19,7 @@ public interface ApplicationMenu {
         }
     }
 
-    default <T> Object handleInput(Class<T> type) {
+    default  <T> Object handleInput(Class<T> type) {
         Object value;
         while (true) {
             try {

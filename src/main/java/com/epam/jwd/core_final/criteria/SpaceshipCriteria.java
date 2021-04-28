@@ -12,4 +12,9 @@ public class SpaceshipCriteria extends Criteria<Spaceship>{
     {
         return p -> p.isReadyForNextMissions() == assigned;
     }
+
+    public static Predicate<Spaceship> isNotLost(Boolean lost)
+    {
+        return p -> p.isReadyForNextMissions() != lost;
+    }
 }

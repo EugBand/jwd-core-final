@@ -13,6 +13,7 @@ import lombok.Getter;
 @Getter
 public class CrewMember extends AbstractBaseEntity {
     boolean isReadyForNextMissions = true;
+    boolean isMissing = false;
     // todo
     private Role role;
     private Rank rank;
@@ -32,4 +33,7 @@ public class CrewMember extends AbstractBaseEntity {
         this.role = role;
     }
 
+    public void setMissing(boolean missing) {
+        this.isMissing = missing;
+    }
 }

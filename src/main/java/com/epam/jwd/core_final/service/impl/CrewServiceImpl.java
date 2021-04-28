@@ -69,13 +69,18 @@ public final class CrewServiceImpl implements CrewService {
     }
 
     @Override
-    public void assignCrewMemberOnMission(CrewMember crewMember) throws RuntimeException {
+    public void assignReadyStatus(CrewMember crewMember, Boolean status) throws RuntimeException {
         try {
-            crewMember.setReadyForNextMissions(false);
+            crewMember.setReadyForNextMissions(status);
         } catch (UpdateServiceException e) {
             logger.log(ERROR, "Can't update spaceship", e);
         }
         updateCrewMemberDetails(crewMember);
+    }
+
+    @Override
+    public void assingLostStatus(CrewMember member, Boolean status){
+        member.setMissing(status);
     }
 
     @Override
