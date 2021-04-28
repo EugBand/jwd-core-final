@@ -17,6 +17,7 @@ import com.epam.jwd.core_final.util.AppLogger;
 import com.epam.jwd.core_final.util.IAppLogger;
 
 import java.io.File;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -35,6 +36,8 @@ public class NassaContext implements ApplicationContext {
     private final Collection<Spaceship> spaceships = new ArrayList<>();
     private final Collection<Planet> planetMap = new ArrayList<>();
     private final Collection<FlightMission> missions = new ArrayList<>();
+
+    private final DateTimeFormatter dateTimeFormat = DateTimeFormatter.ofPattern(ApplicationProperties.getDateTimeFormat());
 
     private NassaContext() {
     }
@@ -116,5 +119,9 @@ public class NassaContext implements ApplicationContext {
 
     void setSmartCrewCreating(boolean smartCrewCreating) {
         this.smartCrewCreating = smartCrewCreating;
+    }
+
+    public DateTimeFormatter getDateTimeFormat() {
+        return dateTimeFormat;
     }
 }
