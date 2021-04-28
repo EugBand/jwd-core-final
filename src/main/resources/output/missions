@@ -7,33 +7,33 @@
 }{
   "message3" : "7 has been complected!"
 }{
-  "message4" : "Mission from-\"Mars\"-to-\"Jupiter\"-ship-\"Challenger\"-distance-5 created"
+  "message4" : "Mission from-\"Mars\"-to-\"Dagobah\"-ship-\"Challenger\"-distance-150 created"
 }{
-  "message5" : "Mission from-\"Mars\"-to-\"Ceres\"-ship-\"Intelligence\"-distance-16 created"
+  "message5" : "Mission from-\"Mars\"-to-\"Mustafar\"-ship-\"Intelligence\"-distance-114 created"
 }{
-  "message6" : "Mission from-\"Mars\"-to-\"Star Forge\"-ship-\"Philadelphia\"-distance-66 created"
+  "message6" : "Mission from-\"Mars\"-to-\"Naboo\"-ship-\"Philadelphia\"-distance-175 created"
 }{
-  "message7" : "Mission from-\"Mars\"-to-\"Mercury\"-ship-\"Sparta\"-distance-70 created"
+  "message7" : "Mission from-\"Mars\"-to-\"Manaan\"-ship-\"Sparta\"-distance-171 created"
 }{
-  "message8" : "Mission from-\"Mars\"-to-\"Taris\"-ship-\"Guardian\"-distance-72 created"
+  "message8" : "Mission from-\"Mars\"-to-\"Star Forge\"-ship-\"Guardian\"-distance-66 created"
 }{
-  "message9" : "Mission from-\"Mars\"-to-\"Korriban\"-ship-\"CS Adder\"-distance-76 created"
+  "message9" : "Mission from-\"Mars\"-to-\"Haumea\"-ship-\"CS Adder\"-distance-123 created"
 }{
-  "message10" : "Mission from-\"Mars\"-to-\"Eris\"-ship-\"LWSS Ural\"-distance-77 created"
+  "message10" : "Mission from-\"Mars\"-to-\"Mercury\"-ship-\"LWSS Ural\"-distance-70 created"
 }{
-  "message11" : "3021-05-03 20:06:48 SUCCESS! Mission from-\"Mars\"-to-\"Jupiter\"-ship-\"Challenger\"-distance-5 completed after 5 days"
+  "message11" : "3021-06-11 22:11:32 R.I.P.! Mission from-\"Mars\"-to-\"Manaan\"-ship-\"Sparta\"-distance-171 failed after 44 days"
 }{
-  "message12" : "3021-05-14 20:06:48 SUCCESS! Mission from-\"Mars\"-to-\"Ceres\"-ship-\"Intelligence\"-distance-16 completed after 16 days"
+  "message12" : "3021-06-15 22:11:32 R.I.P.! Mission from-\"Mars\"-to-\"Mercury\"-ship-\"LWSS Ural\"-distance-70 failed after 48 days"
 }{
-  "message13" : "3021-05-29 20:06:49 R.I.P.! Mission from-\"Mars\"-to-\"Taris\"-ship-\"Guardian\"-distance-72 failed after 31 days"
+  "message13" : "3021-06-29 22:11:33 R.I.P.! Mission from-\"Mars\"-to-\"Haumea\"-ship-\"CS Adder\"-distance-123 failed after 62 days"
 }{
-  "message14" : "3021-06-15 20:06:50 R.I.P.! Mission from-\"Mars\"-to-\"Korriban\"-ship-\"CS Adder\"-distance-76 failed after 48 days"
+  "message14" : "3021-07-03 22:11:33 R.I.P.! Mission from-\"Mars\"-to-\"Mustafar\"-ship-\"Intelligence\"-distance-114 failed after 66 days"
 }{
-  "message15" : "3021-06-28 20:06:51 R.I.P.! Mission from-\"Mars\"-to-\"Eris\"-ship-\"LWSS Ural\"-distance-77 failed after 61 days"
+  "message15" : "3021-07-03 22:11:33 SUCCESS! Mission from-\"Mars\"-to-\"Star Forge\"-ship-\"Guardian\"-distance-66 completed after 66 days"
 }{
-  "message16" : "3021-07-03 20:06:51 SUCCESS! Mission from-\"Mars\"-to-\"Star Forge\"-ship-\"Philadelphia\"-distance-66 completed after 66 days"
+  "message16" : "3021-09-25 22:11:38 SUCCESS! Mission from-\"Mars\"-to-\"Dagobah\"-ship-\"Challenger\"-distance-150 completed after 150 days"
 }{
-  "message17" : "3021-07-07 20:06:52 SUCCESS! Mission from-\"Mars\"-to-\"Mercury\"-ship-\"Sparta\"-distance-70 completed after 70 days"
+  "message17" : "3021-10-20 22:11:40 SUCCESS! Mission from-\"Mars\"-to-\"Naboo\"-ship-\"Philadelphia\"-distance-175 completed after 175 days"
 }{
-  "message18" : "We've discovered 4 planets! But we've lost 3 ships!"
+  "message18" : "We've discovered 3 planets! But we've lost 4 ships!"
 }

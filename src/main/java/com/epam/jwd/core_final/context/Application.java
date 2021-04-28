@@ -31,7 +31,7 @@ public interface Application {
         ScheduledExecutorService service = refreshAfterInterval(nassa);
         List<FlightMission> missions = MissionPlanner.getInstance()
                 .planeMissions(nassa.isSmartCrewCreating(), nassa.isUsingDijkstra());
-        MissionDispatcher.getInstance().dispatchMission(missions);
+        MissionDispatcher.getInstance().dispatchMissionWithExecutor(missions);
         service.shutdown();
         return applicationContextSupplier::get;
     }

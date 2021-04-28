@@ -5,35 +5,43 @@
 }{
   "message2" : "Spaceships also ready! Quantity = 30 ships"
 }{
-  "message3" : "7 has been complected!"
+  "message3" : "9 has been complected!"
 }{
-  "message4" : "Mission from-\"Mars\"-to-\"Planet X\"-ship-\"Challenger\"-distance-138 created"
+  "message4" : "Mission from-\"Mars\"-to-\"Jupiter\"-ship-\"HMS Nightfal\"-distance-5 created"
 }{
-  "message5" : "Mission from-\"Mars\"-to-\"Haumea\"-ship-\"Intelligence\"-distance-123 created"
+  "message5" : "Mission from-\"Mars\"-to-\"Ceres\"-ship-\"Providence\"-distance-16 created"
 }{
-  "message6" : "Mission from-\"Mars\"-to-\"Eris\"-ship-\"Philadelphia\"-distance-77 created"
+  "message6" : "Mission from-\"Mars\"-to-\"Star Forge\"-ship-\"Spider\"-distance-66 created"
 }{
-  "message7" : "Mission from-\"Mars\"-to-\"Dantooine\"-ship-\"Sparta\"-distance-160 created"
+  "message7" : "Mission from-\"Mars\"-to-\"Mercury\"-ship-\"Invincible\"-distance-70 created"
 }{
-  "message8" : "Mission from-\"Mars\"-to-\"Mercury\"-ship-\"Guardian\"-distance-70 created"
+  "message8" : "Mission from-\"Mars\"-to-\"Taris\"-ship-\"Wolf2\"-distance-72 created"
 }{
-  "message9" : "Mission from-\"Mars\"-to-\"Pluto\"-ship-\"CS Adder\"-distance-105 created"
+  "message9" : "Mission from-\"Mars\"-to-\"Korriban\"-ship-\"STS Angel\"-distance-76 created"
 }{
-  "message10" : "Mission from-\"Mars\"-to-\"Earth\"-ship-\"LWSS Ural\"-distance-120 created"
+  "message10" : "Mission from-\"Mars\"-to-\"Eris\"-ship-\"HMS Twilight\"-distance-77 created"
 }{
-  "message11" : "3021-05-07 20:04:33 R.I.P.! Mission from-\"Mars\"-to-\"Mercury\"-ship-\"Guardian\"-distance-70 failed after 9 days"
+  "message11" : "Mission from-\"Mars\"-to-\"Kamino\"-ship-\"ISS Diplomat\"-distance-79 created"
 }{
-  "message12" : "3021-05-10 20:04:33 R.I.P.! Mission from-\"Mars\"-to-\"Pluto\"-ship-\"CS Adder\"-distance-105 failed after 12 days"
+  "message12" : "Mission from-\"Mars\"-to-\"Venus\"-ship-\"CS Revolution\"-distance-79 created"
 }{
-  "message13" : "3021-06-21 20:04:36 R.I.P.! Mission from-\"Mars\"-to-\"Earth\"-ship-\"LWSS Ural\"-distance-120 failed after 54 days"
+  "message13" : "3021-05-03 22:10:51 SUCCESS! Mission from-\"Mars\"-to-\"Jupiter\"-ship-\"HMS Nightfal\"-distance-5 completed after 5 days"
 }{
-  "message14" : "3021-07-14 20:04:37 SUCCESS! Mission from-\"Mars\"-to-\"Eris\"-ship-\"Philadelphia\"-distance-77 completed after 77 days"
+  "message14" : "3021-05-14 22:10:52 SUCCESS! Mission from-\"Mars\"-to-\"Ceres\"-ship-\"Providence\"-distance-16 completed after 16 days"
 }{
-  "message15" : "3021-08-08 20:04:39 R.I.P.! Mission from-\"Mars\"-to-\"Planet X\"-ship-\"Challenger\"-distance-138 failed after 102 days"
+  "message15" : "3021-05-26 22:10:53 R.I.P.! Mission from-\"Mars\"-to-\"Korriban\"-ship-\"STS Angel\"-distance-76 failed after 28 days"
 }{
-  "message16" : "3021-08-29 20:04:40 SUCCESS! Mission from-\"Mars\"-to-\"Haumea\"-ship-\"Intelligence\"-distance-123 completed after 123 days"
+  "message16" : "3021-06-20 22:10:54 R.I.P.! Mission from-\"Mars\"-to-\"Taris\"-ship-\"Wolf2\"-distance-72 failed after 53 days"
 }{
-  "message17" : "3021-10-05 20:04:42 SUCCESS! Mission from-\"Mars\"-to-\"Dantooine\"-ship-\"Sparta\"-distance-160 completed after 160 days"
+  "message17" : "3021-07-03 22:10:55 SUCCESS! Mission from-\"Mars\"-to-\"Star Forge\"-ship-\"Spider\"-distance-66 completed after 66 days"
 }{
-  "message18" : "We've discovered 3 planets! But we've lost 4 ships!"
+  "message18" : "3021-07-07 22:10:55 SUCCESS! Mission from-\"Mars\"-to-\"Mercury\"-ship-\"Invincible\"-distance-70 completed after 70 days"
+}{
+  "message19" : "3021-07-14 22:10:56 SUCCESS! Mission from-\"Mars\"-to-\"Eris\"-ship-\"HMS Twilight\"-distance-77 completed after 77 days"
+}{
+  "message20" : "3021-07-16 22:10:56 SUCCESS! Mission from-\"Mars\"-to-\"Kamino\"-ship-\"ISS Diplomat\"-distance-79 completed after 79 days"
+}{
+  "message21" : "3021-07-16 22:10:56 SUCCESS! Mission from-\"Mars\"-to-\"Venus\"-ship-\"CS Revolution\"-distance-79 completed after 79 days"
+}{
+  "message22" : "We've discovered 7 planets! But we've lost 2 ships!"
 }
