@@ -47,7 +47,7 @@ public final class MissionDispatcher extends MissionMaintainer {
         int discoveredPlanet = planets.size() - fetchExistNotVisitedPlanets().size() - 1;
         int lostShips = missions.size() - discoveredPlanet;
         String result = String.format
-                ("We've discover %d planets! But we've lost %d ships!", discoveredPlanet, lostShips);
+                ("We've discovered %d planets! But we've lost %d ships!", discoveredPlanet, lostShips);
         printer.printWaiting(200,7,'.')
                 .print(AppJSONFilePrinter.getInstance(), result).print(result);
     }

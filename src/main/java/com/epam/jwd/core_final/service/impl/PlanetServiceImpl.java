@@ -2,7 +2,9 @@ package com.epam.jwd.core_final.service.impl;
 
 import com.epam.jwd.core_final.annotation.ISingleton;
 import com.epam.jwd.core_final.context.impl.NassaContext;
+import com.epam.jwd.core_final.domain.CrewMember;
 import com.epam.jwd.core_final.domain.Planet;
+import com.epam.jwd.core_final.exception.serviceexception.UpdateServiceException;
 import com.epam.jwd.core_final.service.PlanetService;
 
 import java.util.List;
@@ -80,6 +82,14 @@ public final class PlanetServiceImpl implements PlanetService {
         long katetX = abs(first.getPoint().getX() - second.getPoint().getX());
         long katetY = abs(first.getPoint().getY() - second.getPoint().getY());
         return (int) hypot(katetX, katetY);
+    }
+
+    @Override
+    public Planet createPlanet(Planet planet) throws RuntimeException {
+        if (planets.stream().filter(item -> item.getName().equals(planet.getName()))
+                .findFirst().isEmpty()) planets.add(planet);
+        else throw new UpdateServiceException("Can't add a planet member to list");
+        return planet;
     }
 
 }

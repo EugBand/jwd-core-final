@@ -8,10 +8,10 @@ import com.epam.jwd.core_final.domain.Spaceship;
 import com.epam.jwd.core_final.printer.impl.AppConsolePrinter;
 import com.epam.jwd.core_final.service.CrewService;
 import com.epam.jwd.core_final.service.PlanetService;
-import com.epam.jwd.core_final.service.SpaceshipService;
+import com.epam.jwd.core_final.service.ShipService;
 import com.epam.jwd.core_final.service.impl.CrewServiceImpl;
 import com.epam.jwd.core_final.service.impl.PlanetServiceImpl;
-import com.epam.jwd.core_final.service.impl.SpaceshipServiceImpl;
+import com.epam.jwd.core_final.service.impl.ShipServiceImpl;
 import com.epam.jwd.core_final.util.AppLogger;
 import com.epam.jwd.core_final.util.IAppLogger;
 
@@ -26,7 +26,7 @@ abstract class MissionMaintainer {
     List<Planet> planets;
     List<Spaceship> ships;
     PlanetService planetService = PlanetServiceImpl.getInstance();
-    SpaceshipService shipService = SpaceshipServiceImpl.getInstance();
+    ShipService shipService = ShipServiceImpl.getInstance();
     CrewService crewService = CrewServiceImpl.getInstance();
 
     {

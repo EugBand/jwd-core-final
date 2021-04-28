@@ -1,8 +1,10 @@
 package com.epam.jwd.core_final.service;
 
 import com.epam.jwd.core_final.domain.CrewMember;
+import com.epam.jwd.core_final.domain.Planet;
 import com.epam.jwd.core_final.domain.Role;
 import com.epam.jwd.core_final.domain.Spaceship;
+import com.epam.jwd.core_final.exception.serviceexception.UpdateServiceException;
 
 import java.util.List;
 import java.util.Map;
@@ -13,7 +15,7 @@ import java.util.function.Predicate;
  * All its implementations should be a singleton
  * You have to use streamAPI for filtering, mapping, collecting, iterating
  */
-public interface SpaceshipService {
+public interface ShipService {
 
     List<Spaceship> findAllSpaceships();
 
@@ -35,4 +37,6 @@ public interface SpaceshipService {
     void assignMembersToShipCrew(Spaceship spaceship, CrewMember... members);
 
     String getName(Spaceship ship);
+
+    Spaceship createShip(Spaceship ship) throws RuntimeException;
 }

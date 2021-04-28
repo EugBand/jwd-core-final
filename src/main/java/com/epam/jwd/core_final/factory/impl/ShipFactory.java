@@ -7,7 +7,7 @@ import com.epam.jwd.core_final.factory.EntityFactory;
 import java.util.Map;
 
 // do the same for other entities
-public final class SpaceshipFactory implements EntityFactory<Spaceship> {
+public final class ShipFactory implements EntityFactory<Spaceship> {
 
     @SuppressWarnings("unchecked")
     @Override

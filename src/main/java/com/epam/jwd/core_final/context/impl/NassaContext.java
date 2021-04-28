@@ -3,7 +3,7 @@ package com.epam.jwd.core_final.context.impl;
 import com.epam.jwd.core_final.context.ApplicationContext;
 import com.epam.jwd.core_final.context.parser.impl.CrewParser;
 import com.epam.jwd.core_final.context.parser.impl.PlanetParser;
-import com.epam.jwd.core_final.context.parser.impl.SpaceshipParser;
+import com.epam.jwd.core_final.context.parser.impl.ShipParser;
 import com.epam.jwd.core_final.domain.ApplicationProperties;
 import com.epam.jwd.core_final.domain.BaseEntity;
 import com.epam.jwd.core_final.domain.CrewMember;
@@ -15,6 +15,7 @@ import com.epam.jwd.core_final.exception.InvalidPropertiesStateException;
 import com.epam.jwd.core_final.exception.InvalidStateException;
 import com.epam.jwd.core_final.util.AppLogger;
 import com.epam.jwd.core_final.util.IAppLogger;
+import com.epam.jwd.core_final.util.PropertyReaderUtil;
 
 import java.io.File;
 import java.time.format.DateTimeFormatter;
@@ -26,7 +27,7 @@ import java.util.Optional;
 import static com.epam.jwd.core_final.util.enums.LogTypes.ERROR;
 
 // todo
-public class NassaContext implements ApplicationContext {
+public final class NassaContext implements ApplicationContext {
     private static NassaContext instance;
     private int failureProbability;
     private boolean usingDijkstra;
@@ -36,8 +37,7 @@ public class NassaContext implements ApplicationContext {
     private final Collection<Spaceship> spaceships = new ArrayList<>();
     private final Collection<Planet> planetMap = new ArrayList<>();
     private final Collection<FlightMission> missions = new ArrayList<>();
-
-    private final DateTimeFormatter dateTimeFormat = DateTimeFormatter.ofPattern(ApplicationProperties.getDateTimeFormat());
+    private DateTimeFormatter dateTimeFormat;
 
     private NassaContext() {
     }
@@ -78,7 +78,8 @@ public class NassaContext implements ApplicationContext {
      */
     @Override
     public void init() throws InvalidStateException {
-
+        PropertyReaderUtil.loadProperties();
+        dateTimeFormat = DateTimeFormatter.ofPattern(ApplicationProperties.getDateTimeFormat());
         String rootInputPath = "./src/main/resources/" + ApplicationProperties.getInputRootDir() + File.separator;
         File crewSource = new File(rootInputPath + ApplicationProperties.getCrewFileName());
         File spaceshipSource = new File(rootInputPath + ApplicationProperties.getSpaceshipsFileName());
@@ -90,11 +91,11 @@ public class NassaContext implements ApplicationContext {
         List<Planet> planetList = (List<Planet>) retrieveBaseEntityList(Planet.class);
         List<Spaceship> spaceshipsList = (List<Spaceship>) retrieveBaseEntityList(Spaceship.class);
 
-        new CrewParser().parseEntity(crewSource, crewMemberList);
-        new PlanetParser().parseEntity(planetSource, planetList);
-        new SpaceshipParser().parseEntity(spaceshipSource, spaceshipsList);
+        CrewParser.getInstance().parseEntity(crewSource, crewMemberList);
+        PlanetParser.getInstance().parseEntity(planetSource, planetList);
+        ShipParser.getInstance().parseEntity(spaceshipSource, spaceshipsList);
 
-        AppMenu.getInstance().getApplicationContext();
+        ApplicationMenuImpl.getInstance().getApplicationContext();
     }
 
     public int getFailureProbability() {

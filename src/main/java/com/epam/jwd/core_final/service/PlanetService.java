@@ -27,4 +27,6 @@ public interface PlanetService {
     boolean isAssigned(Planet planet);
 
     String getName(Planet planet);
+
+    Planet createPlanet(Planet planet) throws RuntimeException;
 }

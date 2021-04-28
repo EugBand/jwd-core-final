@@ -86,7 +86,7 @@ public class AppJSONFilePrinterAfterInterval implements IAppPrinter {
             } catch (IOException e) {
                 logger.log(ERROR, "Error of writing JSON to File", e);
             }
-        }, interval, TimeUnit.SECONDS);
+        }, interval, TimeUnit.MILLISECONDS);
     }
 
 

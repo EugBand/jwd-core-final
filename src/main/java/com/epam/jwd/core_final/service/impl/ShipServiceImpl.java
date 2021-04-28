@@ -7,7 +7,7 @@ import com.epam.jwd.core_final.domain.Role;
 import com.epam.jwd.core_final.domain.Spaceship;
 import com.epam.jwd.core_final.exception.serviceexception.StreamServiceException;
 import com.epam.jwd.core_final.exception.serviceexception.UpdateServiceException;
-import com.epam.jwd.core_final.service.SpaceshipService;
+import com.epam.jwd.core_final.service.ShipService;
 import com.epam.jwd.core_final.util.AppLogger;
 import com.epam.jwd.core_final.util.IAppLogger;
 import javassist.NotFoundException;
@@ -23,18 +23,18 @@ import static com.epam.jwd.core_final.util.enums.LogTypes.ERROR;
 
 @SuppressWarnings("all")
 @ISingleton
-public final class SpaceshipServiceImpl implements SpaceshipService {
-    private static SpaceshipService instance;
+public final class ShipServiceImpl implements ShipService {
+    private static ShipService instance;
     IAppLogger logger = AppLogger.getInstance();
     private List<Spaceship> ships = Optional.ofNullable((List<Spaceship>) NassaContext.getInstance()
             .retrieveBaseEntityList(Spaceship.class)).orElseThrow(IllegalStateException::new);
 
-    private SpaceshipServiceImpl() {
+    private ShipServiceImpl() {
     }
 
-    public static SpaceshipService getInstance() {
+    public static ShipService getInstance() {
         if (instance == null) {
-            instance = new SpaceshipServiceImpl();
+            instance = new ShipServiceImpl();
         }
         return instance;
     }
@@ -109,5 +109,13 @@ public final class SpaceshipServiceImpl implements SpaceshipService {
     @Override
     public String getName(Spaceship ship) {
         return ship.getName();
+    }
+
+    @Override
+    public Spaceship createShip(Spaceship ship) throws RuntimeException {
+        if (ships.stream().filter(item -> item.getName().equals(ship.getName()))
+                .findFirst().isEmpty()) ships.add(ship);
+        else throw new UpdateServiceException("Can't add a ship member to list");
+        return ship;
     }
 }

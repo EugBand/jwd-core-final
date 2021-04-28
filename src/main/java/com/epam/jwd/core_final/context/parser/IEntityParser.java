@@ -10,4 +10,5 @@ public interface IEntityParser<T> {
     IAppLogger logger = AppLogger.getInstance();
 
     void parseEntity(File sourceFile, List<T> entities);
+
 }

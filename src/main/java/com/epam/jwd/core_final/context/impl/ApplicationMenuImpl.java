@@ -4,19 +4,20 @@ import com.epam.jwd.core_final.context.ApplicationContext;
 import com.epam.jwd.core_final.context.ApplicationMenu;
 import com.epam.jwd.core_final.domain.CrewMember;
 import com.epam.jwd.core_final.domain.Planet;
+import com.epam.jwd.core_final.domain.Spaceship;
 import com.epam.jwd.core_final.printer.impl.AppConsolePrinter;
 import com.epam.jwd.core_final.printer.impl.AppJSONFilePrinter;
 
-public class AppMenu implements ApplicationMenu {
+public final class ApplicationMenuImpl implements ApplicationMenu {
     private static ApplicationMenu instance;
     private NassaContext nassa;
     private final AppConsolePrinter printer = (AppConsolePrinter) AppConsolePrinter.getInstance();
 
-    private AppMenu() {
+    private ApplicationMenuImpl() {
     }
 
     public static ApplicationMenu getInstance(){
-        if (instance == null) instance = new AppMenu();
+        if (instance == null) instance = new ApplicationMenuImpl();
         return instance;
     }
 
@@ -29,7 +30,7 @@ public class AppMenu implements ApplicationMenu {
     }
 
     private void initUserMissionData() {
-        this.handleOutput("FUTURAMA EXPANSE INIT!", printer);
+        this.handleOutput("FUTURAMA 3021 EXPANSE INIT!", printer);
         this.handleOutput("Type flights accident probability " +
                 "from \"1\" to \"99\" (e.c. 40 = 1% per 1 distance to lost ship)", printer);
         nassa.setFailureProbability((Integer) this.handleInput(Integer.class));
@@ -47,7 +48,7 @@ public class AppMenu implements ApplicationMenu {
         String planetMessage = "Planets map ready! Quantity = " +
                 nassa.retrieveBaseEntityList(Planet.class).size() + " planet";
         String shipMessage = "Spaceships also ready! Quantity = " +
-                nassa.retrieveBaseEntityList(Planet.class).size() + " ships";
+                nassa.retrieveBaseEntityList(Spaceship.class).size() + " ships";
         this.handleOutput(crewMessage, printer.printWaiting(200, 7, '.')
                 .print(AppJSONFilePrinter.getInstance(), crewMessage));
         this.handleOutput(planetMessage, printer.printWaiting(200, 7, '.')
